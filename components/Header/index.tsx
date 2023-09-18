@@ -7,7 +7,7 @@ import linkedin from "@/public/images/linkedin.svg";
 
 export default function Header() {
   return (
-    <header className="mb-12 py-4 px-12 flex justify-between items-center">
+    <header className="mb-12 py-4 flex justify-between items-center">
       <Link href="/">
         <Image src={logo} alt="logo" height={60} />
       </Link>
