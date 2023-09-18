@@ -17,7 +17,7 @@ export default function Home() {
             <Link href="/contact">
               <Button dark>Contato</Button>
             </Link>
-            <Link href="/work">
+            <Link href="/projects">
               <Button>Confira meu trabalho</Button>
             </Link>
           </div>
