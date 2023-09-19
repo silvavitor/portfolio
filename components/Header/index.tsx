@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import logo from "@/public/images/logo.svg";
-import github from "@/public/images/github.svg";
-import linkedin from "@/public/images/linkedin.svg";
+import github from "@/public/images/icons/github.svg";
+import linkedin from "@/public/images/icons/linkedin.svg";
 
 export default function Header() {
   return (
