@@ -4,7 +4,7 @@ import Image from "next/image";
 type ButtonProps = {
   small?: Boolean,
   icon?: StaticImport | string,
-  children: String
+  children: string
 }
 
 export default function Button({ small = false, icon = '', children }: ButtonProps) {
