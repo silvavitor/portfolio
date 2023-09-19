@@ -1,12 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import Button from "@/components/Button";
-import Link from "next/link";
+import ProjectCard from "@/components/ProjectCard";
 
 import vitor from "@/public/images/vitor.jpg";
 import circles from "@/public/images/circles.png";
 
+import projectsJSON from "@/data/projects.json";
+import { ProjectData } from "@/interfaces/project";
+
+
 export default function Home() {
+  const projects: Array<ProjectData> = projectsJSON.projects.slice(0, 3);
   return (
     <div className="py-12">
       {/* About */}
@@ -26,14 +32,13 @@ export default function Home() {
           <p className="mt-2 text-sm">Sou um desenvolvedor do Rio Grande do Sul, Brasil. Possuo 4 anos de experiência comercial, porém, tenho contato com programação há 8 anos. <br />Estou aberto a novas oportunidades e projetos.</p>
           <div className="mt-5 flex space-x-4">
             <Link href="/contact">
-              <Button dark>Contato</Button>
+              <Button>Contato</Button>
             </Link>
             <Link href="/projects">
               <Button>Confira meu trabalho</Button>
             </Link>
           </div>
         </div>
-
       </div>
 
       {/* Work */}
@@ -41,7 +46,12 @@ export default function Home() {
         <Link href="/projects">
           <h1 className="text-3xl font-bold">Projetos</h1>
         </Link>
-        <p className="mt-2 text-sm">Meus projetos principais de destaque.<br />Se você tiver qualquer dúvida, sinta-se à vontade para me perguntar!</p>
+        <p className="mt-2 text-sm">Meus projetos destaque.<br />Se você tiver qualquer dúvida, sinta-se à vontade para me perguntar!</p>
+      </div>
+      <div className="mt-10 flex justify-evenly">
+        {projects.map((project, index) => (
+          <ProjectCard key={index} project={project} />
+        ))}
       </div>
     </div>
   )
