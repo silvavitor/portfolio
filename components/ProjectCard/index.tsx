@@ -19,10 +19,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <Image src={mock} alt="mock" className="rounded-md" />
       <h2 className="font-bold text-lg mt-2">{project.title}</h2>
 
-      <div>
-
-      </div>
-
       <div className="mt-3 text-xs space-x-1">
         {techs.map((tech, index) => (
           <span key={index} className="px-2 py-1 rounded-lg bg-neutral-200">{tech}</span>
