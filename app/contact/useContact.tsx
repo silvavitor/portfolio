@@ -1,6 +1,9 @@
 "use client";
-import { BaseSyntheticEvent, ChangeEvent, SyntheticEvent, useState } from "react";
-import { useForm, Resolver } from "react-hook-form";
+import { BaseSyntheticEvent, ChangeEvent, useState } from "react";
+import { useForm } from "react-hook-form";
+
+import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
 
 type FormValues = {
   email: string
@@ -18,6 +21,19 @@ export default function useContact() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
+  async function sendMail() {
+    const response = await fetch('api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name, email, message
+      })
+    });
+    console.log(response);
+  }
+
   function handleEmailChange(event: ChangeEvent<HTMLInputElement>) {
     setEmail(event.target.value);
   }
@@ -31,7 +47,9 @@ export default function useContact() {
   }
 
   function onSubmit(): (e?: BaseSyntheticEvent<object, any, any> | undefined) => Promise<void> {
-    return handleSubmit((data) => console.log(data))
+    return handleSubmit((data) => {
+      sendMail()
+    })
   }
 
   return [{
