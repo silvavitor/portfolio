@@ -15,7 +15,7 @@ type ProjectCardProps = {
 export default function ProjectCard({ project }: ProjectCardProps) {
   const techs = project.techs.slice(0, 3);
   return (
-    <div className="w-64 h-96 py-5 px-3 bg-white flex flex-col rounded-md shadow-md hover:shadow-xl transition duration-200">
+    <div className="mt-8 md:mt-0 mx-1 w-64 h-96 py-5 px-3 bg-white flex flex-col rounded-md shadow-md hover:shadow-xl transition duration-200">
       <Image src={mock} alt="mock" className="rounded-md" />
       <h2 className="font-bold text-lg mt-2">{project.title}</h2>
 
