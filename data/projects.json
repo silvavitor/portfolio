@@ -4,8 +4,6 @@
       "title": "Titulo",
       "description": "Descrição",
       "techs": [
-        "React",
-        "Node",
         "PostgreSQL"
       ],
       "repo": "google.com",
@@ -16,9 +14,16 @@
       "description": "Descrição 2",
       "techs": [
         "React",
-        "Node",
-        "React",
         "PostgreSQL"
+      ],
+      "repo": "google.com",
+      "live": "tailwindcss.com/"
+    },
+    {
+      "title": "Titulo 3",
+      "description": "Descrição 3",
+      "techs": [
+        "React"
       ],
       "repo": "google.com",
       "live": "tailwindcss.com/"
@@ -30,6 +35,15 @@
         "React",
         "Node",
         "PostgreSQL"
+      ],
+      "repo": "google.com",
+      "live": "tailwindcss.com/"
+    },
+    {
+      "title": "Titulo 3",
+      "description": "Descrição 3",
+      "techs": [
+        "Node"
       ],
       "repo": "google.com",
       "live": "tailwindcss.com/"

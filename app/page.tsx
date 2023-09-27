@@ -50,7 +50,7 @@ export default function Home() {
       </div>
       <div className="mt-10 flex justify-evenly">
         {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+          (index < 3) && <ProjectCard key={index} project={project} />
         ))}
       </div>
     </div>

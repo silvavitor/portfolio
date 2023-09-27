@@ -1,7 +1,7 @@
 export interface ProjectData {
-  title: String,
-  description: String,
-  techs: Array<String>,
-  repo: String,
-  live: String,
+  title: string,
+  description: string,
+  techs: Array<string>,
+  repo: string,
+  live: string,
 }
