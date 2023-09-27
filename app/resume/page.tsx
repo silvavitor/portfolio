@@ -44,7 +44,7 @@ export default function Resume() {
         date="2019 - 2022"
       />
       <ResumeInfo
-        title="Técnico em informática"
+        title="Técnico em informática integrado ao ensino médio"
         local="Instituto Federal de Educação Ciência e Tecnologia do Rio Grande do Sul"
         date="2015 - 2018"
       />
