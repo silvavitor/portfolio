@@ -1,6 +1,6 @@
 export default function ResumeSkillsTools() {
   return (
-    <div className="flex mt-6 space-x-16">
+    <div className="flex flex-col md:flex-row mt-6 space-y-12 md:space-x-16 md:space-y-0">
       <div className="w-40">
         <p className="text-sm">JavaScript</p>
         <p className="text-sm">HTML</p>
