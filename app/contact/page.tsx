@@ -10,15 +10,11 @@ import FormErrorLabel from "./formErrorLabel";
 
 export default function Contact() {
   const [{
-    name,
-    email,
-    message,
+    contact,
     register,
     errors,
   }, {
-    handleNameChange,
-    handleEmailChange,
-    handleMessageChange,
+    handleChangeContact,
     onSubmit
   }] = useContact();
 
@@ -36,8 +32,9 @@ export default function Contact() {
       >
         <input
           {...register?.("name", { required: true })}
-          onChange={handleNameChange}
-          value={name}
+          onChange={handleChangeContact}
+          name="name"
+          value={contact?.name}
           className={
             (errors?.name ? "border-red-600 bg-red-100 focus:outline-red-600 " : "border-black ") +
             "mt-3 border rounded-md p-3 w-full"
@@ -56,8 +53,9 @@ export default function Contact() {
             required: true,
             pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
           })}
-          onChange={handleEmailChange}
-          value={email}
+          onChange={handleChangeContact}
+          value={contact?.email}
+          name="email"
           className={
             (errors?.email ? "border-red-600 bg-red-100 focus:outline-red-600 " : "border-black ") +
             "mt-3 border rounded-md p-3 w-full"
@@ -76,8 +74,9 @@ export default function Contact() {
 
         <textarea
           {...register?.("message", { required: true })}
-          onChange={handleMessageChange}
-          value={message}
+          onChange={handleChangeContact}
+          name="message"
+          value={contact?.message}
           className={
             (errors?.message ? "border-red-600 bg-red-100 focus:outline-red-600 " : "border-black ") +
             "mt-3 border rounded-md p-3 w-full"

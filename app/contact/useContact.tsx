@@ -4,8 +4,8 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 type FormValues = {
-  email: string
   name: string
+  email: string
   message: string
 }
 
@@ -15,9 +15,15 @@ export default function useContact() {
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+
+  const [contact, setContact] = useState<FormValues>({ name: '', email: '', message: '' });
+
+  function handleChangeContact(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+    setContact((prevContact) => ({
+      ...prevContact,
+      [event.target.name]: event.target.value
+    }))
+  };
 
   async function sendEmail() {
     const response = await fetch('api/send', {
@@ -25,9 +31,7 @@ export default function useContact() {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        name, email, message
-      })
+      body: JSON.stringify(contact)
     });
 
     const body = await response.json();
@@ -44,9 +48,9 @@ export default function useContact() {
           secondary: '#f5f5f5',
         }
       });
-      setName('');
-      setEmail('');
-      setMessage('');
+
+      setContact({ name: '', email: '', message: '' });
+
     } else {
       toast.error("Ocorreu um erro! Tente mais tarde.", {
         style: {
@@ -62,34 +66,18 @@ export default function useContact() {
     }
   }
 
-  function handleEmailChange(event: ChangeEvent<HTMLInputElement>) {
-    setEmail(event.target.value);
-  }
-
-  function handleNameChange(event: ChangeEvent<HTMLInputElement>) {
-    setName(event.target.value);
-  }
-
-  function handleMessageChange(event: ChangeEvent<HTMLTextAreaElement>) {
-    setMessage(event.target.value);
-  }
-
   function onSubmit(): (e?: BaseSyntheticEvent<object, any, any> | undefined) => Promise<void> {
-    return handleSubmit((data) => {
+    return handleSubmit(() => {
       sendEmail();
     })
   }
 
   return [{
-    name,
-    email,
-    message,
+    contact,
     register,
     errors,
   }, {
-    handleEmailChange,
-    handleNameChange,
-    handleMessageChange,
+    handleChangeContact,
     onSubmit
   }];
 }
