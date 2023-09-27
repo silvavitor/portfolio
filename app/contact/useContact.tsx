@@ -1,9 +1,7 @@
 "use client";
 import { BaseSyntheticEvent, ChangeEvent, useState } from "react";
 import { useForm } from "react-hook-form";
-
-import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import toast from "react-hot-toast";
 
 type FormValues = {
   email: string
@@ -21,7 +19,7 @@ export default function useContact() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  async function sendMail() {
+  async function sendEmail() {
     const response = await fetch('api/send', {
       method: 'POST',
       headers: {
@@ -31,7 +29,37 @@ export default function useContact() {
         name, email, message
       })
     });
-    console.log(response);
+
+    const body = await response.json();
+
+    if (body?.id) {
+      toast.success("E-mail enviado", {
+        style: {
+          border: '1px solid #000',
+          padding: '8px',
+          color: '#000',
+          background: '#f5f5f5'
+        }, iconTheme: {
+          primary: '#000',
+          secondary: '#f5f5f5',
+        }
+      });
+      setName('');
+      setEmail('');
+      setMessage('');
+    } else {
+      toast.error("Ocorreu um erro! Tente mais tarde.", {
+        style: {
+          border: '1px solid #dc2626',
+          padding: '8px',
+          color: '#000',
+          background: '#fee2e2'
+        }, iconTheme: {
+          primary: '#dc2626',
+          secondary: '#fee2e2',
+        }
+      });
+    }
   }
 
   function handleEmailChange(event: ChangeEvent<HTMLInputElement>) {
@@ -48,7 +76,7 @@ export default function useContact() {
 
   function onSubmit(): (e?: BaseSyntheticEvent<object, any, any> | undefined) => Promise<void> {
     return handleSubmit((data) => {
-      sendMail()
+      sendEmail();
     })
   }
 
