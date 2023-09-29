@@ -14,7 +14,7 @@ import { ProjectData } from "@/interfaces/project";
 export default function Home() {
   const projects: Array<ProjectData> = projectsJSON.projects.slice(0, 3);
   return (
-    <>
+    <div className="md:mt-32">
       {/* About */}
       <div className="flex items-center justify-center flex-col md:flex-row ">
         <div className="h-[420px] relative top-0 left-0 flex items-center">
@@ -43,9 +43,7 @@ export default function Home() {
 
       {/* Work */}
       <div className="mt-12 flex flex-col items-center text-center">
-        <Link href="/projects">
-          <h1 className="text-3xl font-bold">Destaques</h1>
-        </Link>
+        <h1 className="text-3xl font-bold">Destaques</h1>
         <p className="mt-2 text-sm">Meus projetos destaque.<br />Se você tiver qualquer dúvida, sinta-se à vontade para me perguntar!</p>
       </div>
       <div className="mt-10 flex flex-col md:flex-row justify-evenly items-center">
@@ -53,6 +51,6 @@ export default function Home() {
           (index < 3) && <ProjectCard key={index} project={project} />
         ))}
       </div>
-    </>
+    </div>
   )
 }

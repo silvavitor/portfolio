@@ -21,7 +21,7 @@ export default function Contact() {
   return (
     <div className="flex flex-col items-center max-w-3xl mx-auto">
       <h1 className="text-3xl font-bold">Contato</h1>
-      <div className="mt-3 text-sm flex flex-col items-center">
+      <div className="mt-3 text-sm flex flex-col md:items-center">
         <p>Deixe-me saber se você está interessado em meus serviços ou colaboração.</p>
         <p>Responderei o quanto antes!</p>
       </div>
