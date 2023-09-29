@@ -6,8 +6,8 @@
       "techs": [
         "PostgreSQL"
       ],
-      "repo": "google.com",
-      "live": "tailwindcss.com/"
+      "repo": "https://www.google.com",
+      "live": "https://www.tailwindcss.com/"
     },
     {
       "title": "Titulo 2",
@@ -16,8 +16,8 @@
         "React",
         "PostgreSQL"
       ],
-      "repo": "google.com",
-      "live": "tailwindcss.com/"
+      "repo": "https://www.google.com",
+      "live": "https://www.tailwindcss.com/"
     },
     {
       "title": "Titulo 3",
@@ -25,8 +25,8 @@
       "techs": [
         "React"
       ],
-      "repo": "google.com",
-      "live": "tailwindcss.com/"
+      "repo": "https://www.google.com",
+      "live": "https://www.tailwindcss.com/"
     },
     {
       "title": "Titulo 3",
@@ -36,8 +36,8 @@
         "Node",
         "PostgreSQL"
       ],
-      "repo": "google.com",
-      "live": "tailwindcss.com/"
+      "repo": "https://www.google.com",
+      "live": "https://www.tailwindcss.com/"
     },
     {
       "title": "Titulo 3",
@@ -45,8 +45,8 @@
       "techs": [
         "Node"
       ],
-      "repo": "google.com",
-      "live": "tailwindcss.com/"
+      "repo": "https://www.google.com",
+      "live": "https://www.tailwindcss.com/"
     }
   ]
 }
