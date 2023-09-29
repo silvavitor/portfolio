@@ -14,7 +14,7 @@ import { ProjectData } from "@/interfaces/project";
 export default function Home() {
   const projects: Array<ProjectData> = projectsJSON.projects.slice(0, 3);
   return (
-    <div className="py-12">
+    <>
       {/* About */}
       <div className="flex items-center justify-center flex-col md:flex-row ">
         <div className="h-[420px] relative top-0 left-0 flex items-center">
@@ -42,9 +42,9 @@ export default function Home() {
       </div>
 
       {/* Work */}
-      <div className="mt-28 flex flex-col items-center text-center">
+      <div className="mt-12 flex flex-col items-center text-center">
         <Link href="/projects">
-          <h1 className="text-3xl font-bold">Projetos</h1>
+          <h1 className="text-3xl font-bold">Destaques</h1>
         </Link>
         <p className="mt-2 text-sm">Meus projetos destaque.<br />Se você tiver qualquer dúvida, sinta-se à vontade para me perguntar!</p>
       </div>
@@ -53,6 +53,6 @@ export default function Home() {
           (index < 3) && <ProjectCard key={index} project={project} />
         ))}
       </div>
-    </div>
+    </>
   )
 }
