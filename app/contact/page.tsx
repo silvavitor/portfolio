@@ -95,7 +95,7 @@ export default function Contact() {
       </form>
 
       <span className="bg-black text-neutral-100 mt-10">Vamos conversar!</span>
-      <a href="mailto:vitor_fernando@outlook.com.br" className="flex items-center justify-center mt-2 mb-32">
+      <a href="mailto:vitor_fernando@outlook.com.br" className="flex items-center justify-center mt-2">
         <span className="text-sm mr-1">vitor_fernando@outlook.com.br</span>
         <Image src={arrow} alt="icon" height={18} />
       </a>

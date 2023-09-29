@@ -54,7 +54,7 @@ export default function Resume() {
       <ResumeSkillsTools />
 
       <span className="mt-10">Baixe meu currículo como PDF.</span>
-      <div className="mt-3 mb-32">
+      <div className="mt-3">
         <a href="pdf/resume_vitor.pdf" target="_blank" rel="noopener noreferrer" download>
           <Button icon={download}>Baixar (96KB)</Button>
         </a>

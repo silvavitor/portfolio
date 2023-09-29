@@ -16,7 +16,7 @@ export default function Projects() {
   ] = useProjects();
 
   return (
-    <div className="flex flex-col items-center mx-auto mb-32">
+    <div className="flex flex-col items-center mx-auto">
       <h1 className="text-3xl font-bold">Projetos</h1>
       <div className="mt-3 text-sm flex flex-col items-center">
         <div className="space-x-2 space-y-2 text-center">
