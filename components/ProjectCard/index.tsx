@@ -1,8 +1,6 @@
 import Image from "next/image"
 import Button from "../Button"
 
-import mock from "@/public/images/mock.png";
-
 import github from "@/public/images/icons/github.svg";
 import eye from "@/public/images/icons/eye.svg";
 
@@ -16,7 +14,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const techs = project.techs.slice(0, 3);
   return (
     <div className="mt-8 md:mt-0 mx-1 w-64 h-96 py-5 px-3 bg-white flex flex-col rounded-md shadow-md hover:shadow-xl transition duration-200">
-      <Image src={mock} alt="mock" className="rounded-md" />
+      <Image src={`/images/${project.image}`} alt={project.title} width={300} height={300} className="rounded-md" />
       <h2 className="font-bold text-lg mt-2">{project.title}</h2>
 
       <div className="mt-3 text-xs space-x-1">
@@ -33,12 +31,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       <div className="mt-5 flex justify-evenly">
-        <a href={project.repo} target="_blank">
-          <Button small icon={github}>Repo</Button>
-        </a>
-        <a href={project.live} target="_blank">
-          <Button small icon={eye}>Live</Button>
-        </a>
+        {project.repo &&
+          <a href={project.repo} target="_blank">
+            <Button small icon={github}>Repo</Button>
+          </a>
+        }
+
+        {project.live &&
+          <a href={project.live} target="_blank">
+            <Button small icon={eye}>Live</Button>
+          </a>
+        }
       </div>
     </div>
   );

@@ -1,52 +1,43 @@
 {
   "projects": [
     {
-      "title": "Titulo",
-      "description": "Descrição",
-      "techs": [
-        "PostgreSQL"
-      ],
-      "repo": "https://www.google.com",
-      "live": "https://www.tailwindcss.com/"
-    },
-    {
-      "title": "Titulo 2",
-      "description": "Descrição 2",
-      "techs": [
-        "React",
-        "PostgreSQL"
-      ],
-      "repo": "https://www.google.com",
-      "live": "https://www.tailwindcss.com/"
-    },
-    {
-      "title": "Titulo 3",
-      "description": "Descrição 3",
-      "techs": [
-        "React"
-      ],
-      "repo": "https://www.google.com",
-      "live": "https://www.tailwindcss.com/"
-    },
-    {
-      "title": "Titulo 3",
-      "description": "Descrição 3",
+      "title": "MyContacts",
+      "description": "Software para organizar contatos e suas categorias",
+      "image": "mycontacts.png",
       "techs": [
         "React",
         "Node",
-        "PostgreSQL"
+        "PostgreSQL",
+        "Express",
+        "Styled-Components"
       ],
-      "repo": "https://www.google.com",
-      "live": "https://www.tailwindcss.com/"
+      "repo": "https://github.com/silvavitor/my-contacts",
+      "live": ""
     },
     {
-      "title": "Titulo 3",
-      "description": "Descrição 3",
+      "title": "Portfolio",
+      "description": "Meu portfolio minimalista",
+      "image": "portfolio.png",
       "techs": [
-        "Node"
+        "Next.js",
+        "Tailwind.css",
+        "TypeScript"
       ],
-      "repo": "https://www.google.com",
-      "live": "https://www.tailwindcss.com/"
+      "repo": "https://github.com/silvavitor/portfolio",
+      "live": "https://vitorfernandoportfolio.vercel.app/"
+    },
+    {
+      "title": "FaceRecognition",
+      "description": "Meu primeiro projeto com react, um software que detecta faces numa image utilizando IA.",
+      "image": "facedetection.png",
+      "techs": [
+        "React",
+        "Node",
+        "PostgreSQL",
+        "Express"
+      ],
+      "repo": "https://github.com/silvavitor/face-detection",
+      "live": ""
     }
   ]
 }
