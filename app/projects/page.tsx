@@ -25,7 +25,6 @@ export default function Projects() {
             <button key={index} className="m-1 px-2 py-1 rounded-lg bg-neutral-200 cursor-pointer" onClick={filterTechs} id={tech}>{tech}</button>
           ))}
         </div>
-
       </div>
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-[70px] gap-y-8 md:gap-y-12 lg:gap-y-16">
         {filteredProjects?.map((project, index) => (

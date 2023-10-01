@@ -1,8 +1,9 @@
 {
   "projects": [
     {
+      "id": "mycontacts",
       "title": "MyContacts",
-      "description": "Software para organizar contatos e suas categorias",
+      "description": "Software para organizar contatos e suas categorias.",
       "image": "mycontacts.png",
       "techs": [
         "React",
@@ -15,8 +16,9 @@
       "live": ""
     },
     {
+      "id": "portfolio",
       "title": "Portfolio",
-      "description": "Portfolio moderno e minimalista",
+      "description": "Portfolio moderno e minimalista.",
       "image": "portfolio.png",
       "techs": [
         "Next.js",
@@ -27,6 +29,7 @@
       "live": "https://vitorfernandoportfolio.vercel.app/"
     },
     {
+      "id": "facerecognition",
       "title": "FaceRecognition",
       "description": "Meu primeiro projeto com react, um software que detecta faces numa image utilizando IA.",
       "image": "facedetection.png",
