@@ -3,8 +3,21 @@
 import ProjectCard from "@/components/ProjectCard";
 
 import useProjects from "./useProjects";
+import { useLanguageContext } from "@/contexts/LanguageContext";
+
+const texts = {
+  title: {
+    pt: 'Projetos',
+    en: 'Projects'
+  },
+  all: {
+    pt: 'Todos',
+    en: 'All'
+  }
+}
 
 export default function Projects() {
+  const { language } = useLanguageContext();
   const [
     {
       techs,
@@ -17,10 +30,10 @@ export default function Projects() {
 
   return (
     <div className="flex flex-col items-center mx-auto">
-      <h1 className="text-3xl font-bold">Projetos</h1>
+      <h1 className="text-3xl font-bold">{texts.title[language]}</h1>
       <div className="mt-3 text-sm flex flex-col items-center">
         <div className="space-x-2 space-y-2 text-center">
-          <button key={'all'} className="m-1 px-2 py-1 rounded-lg bg-neutral-200 cursor-pointer" onClick={filterTechs} id={'all'}>Todos</button>
+          <button key={'all'} className="m-1 px-2 py-1 rounded-lg bg-neutral-200 cursor-pointer" onClick={filterTechs} id={'all'}>{texts.all[language]}</button>
           {techs?.map((tech, index) => (
             <button key={index} className="m-1 px-2 py-1 rounded-lg bg-neutral-200 cursor-pointer" onClick={filterTechs} id={tech}>{tech}</button>
           ))}
