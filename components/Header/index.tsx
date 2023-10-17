@@ -61,11 +61,11 @@ export default function Header() {
                 </Link>
               </li>
               <li className="w-full">
-                <span onClick={() => setLanguage('pt')} className="cursor-pointer mr-1">
+                <span onClick={() => setLanguage('pt')} className={`cursor-pointer mr-1 p-1 ${language === 'pt' ? 'bg-neutral-300 rounded' : ''}`}>
                   PT
                 </span>
                 |
-                <span onClick={() => setLanguage('en')} className="cursor-pointer ml-1">
+                <span onClick={() => setLanguage('en')} className={`cursor-pointer ml-1 p-1 ${language === 'en' ? 'bg-neutral-300 rounded' : ''}`}>
                   EN
                 </span>
               </li>
