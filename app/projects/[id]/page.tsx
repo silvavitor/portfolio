@@ -17,7 +17,6 @@ type DetailsType = {
 export default function ProjectDetails({ params }: DetailsType) {
   const { id } = params;
   const project = projectsJSON.projects.find((p) => p.id === id);
-  console.log(project)
 
   if (!project) {
     return (
@@ -27,9 +26,7 @@ export default function ProjectDetails({ params }: DetailsType) {
 
   return (
     <div className="flex flex-col items-center justify-center  ">
-
       <h1 className="font-bold text-4xl">{project.title}</h1>
-
       <div className="flex flex-col items-center justify-center md:flex-row mt-4">
         <Image src={`/images/${project.image}`} alt={project.title} width={600} height={300} className="rounded-md border border-black" />
       </div>
@@ -45,7 +42,7 @@ export default function ProjectDetails({ params }: DetailsType) {
         </div>
       </div>
 
-      <div className="mt-5 flex justify-evenly">
+      <div className="mt-5 flex space-x-2">
         {project.repo &&
           <a href={project.repo} target="_blank">
             <Button icon={github}>Repo</Button>
