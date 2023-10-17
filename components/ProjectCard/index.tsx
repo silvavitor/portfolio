@@ -8,12 +8,14 @@ import eye from "@/public/images/icons/eye.svg";
 
 import { ProjectData } from "@/interfaces/project";
 import { useRouter } from 'next/navigation';
+import { useLanguageContext } from "@/contexts/LanguageContext";
 
 type ProjectCardProps = {
   project: ProjectData
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const { language } = useLanguageContext();
   const techs = project.techs.slice(0, 3);
   const { push } = useRouter();
 
@@ -34,7 +36,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       <div className="mt-3 h-full overflow-hidden leading-4">
-        <span className="text-xs mt-3">{project.description}</span>
+        <span className="text-xs mt-3">{project.description[language]}</span>
       </div>
 
       <div className="mt-5 flex justify-evenly">

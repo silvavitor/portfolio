@@ -3,7 +3,10 @@
     {
       "id": "mycontacts",
       "title": "MyContacts",
-      "description": "Software para organizar contatos e suas categorias.",
+      "description": {
+        "pt": "Software para organizar contatos e suas categorias.",
+        "en": "Software to organize contacts and their categories."
+      },
       "image": "mycontacts.png",
       "techs": [
         "React",
@@ -18,7 +21,10 @@
     {
       "id": "portfolio",
       "title": "Portfolio",
-      "description": "Portfolio moderno e minimalista.",
+      "description": {
+        "pt": "Portfolio moderno e minimalista.",
+        "en": "Modern and minimalist portfolio."
+      },
       "image": "portfolio.png",
       "techs": [
         "Next.js",
@@ -31,7 +37,10 @@
     {
       "id": "facerecognition",
       "title": "FaceRecognition",
-      "description": "Meu primeiro projeto com react, um software que detecta faces numa image utilizando IA.",
+      "description": {
+        "pt": "Meu primeiro projeto com react, um software que detecta faces numa image utilizando IA.",
+        "en": "My first project with react, a software that detects faces in an image using AI."
+      },
       "image": "facedetection.png",
       "techs": [
         "React",
