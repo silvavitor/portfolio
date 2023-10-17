@@ -21,6 +21,7 @@ export default function Projects() {
   const [
     {
       techs,
+      selectedTech,
       filteredProjects
     },
     {
@@ -33,9 +34,9 @@ export default function Projects() {
       <h1 className="text-3xl font-bold">{texts.title[language]}</h1>
       <div className="mt-3 text-sm flex flex-col items-center">
         <div className="space-x-2 space-y-2 text-center">
-          <button key={'all'} className="m-1 px-2 py-1 rounded-lg bg-neutral-200 cursor-pointer" onClick={filterTechs} id={'all'}>{texts.all[language]}</button>
+          <button key={'all'} className={`m-1 px-2 py-1 rounded-lg  cursor-pointer ${selectedTech === 'all' ? 'bg-neutral-300' : 'bg-neutral-200'}`} onClick={filterTechs} id={'all'}>{texts.all[language]}</button>
           {techs?.map((tech, index) => (
-            <button key={index} className="m-1 px-2 py-1 rounded-lg bg-neutral-200 cursor-pointer" onClick={filterTechs} id={tech}>{tech}</button>
+            <button key={index} className={`m-1 px-2 py-1 rounded-lg cursor-pointer ${selectedTech === tech ? 'bg-neutral-300' : 'bg-neutral-200'}`} onClick={filterTechs} id={tech}>{tech}</button>
           ))}
         </div>
       </div>

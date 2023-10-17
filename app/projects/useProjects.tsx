@@ -31,6 +31,7 @@ export default function useProjects() {
   return [
     {
       techs,
+      selectedTech,
       filteredProjects
     },
     {
