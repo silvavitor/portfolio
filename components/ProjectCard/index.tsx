@@ -36,19 +36,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         <div className="mt-5 flex justify-evenly">
-          {project.repo &&
-            <a href={project.repo} target="_blank">
-              <Button small icon={github}>Repo</Button>
-            </a>
-          }
+          <a href={project.repo} target="_blank" className={project.repo ? 'block' : 'hidden'}>
+            <Button small icon={github}>Repo</Button>
+          </a>
 
-          {project.live &&
-            <a href={project.live} target="_blank">
-              <Button small icon={eye}>Live</Button>
-            </a>
-          }
+          <a href={project.live} target="_blank" className={project.live ? 'block' : 'hidden'}>
+            <Button small icon={eye}>Live</Button>
+          </a>
         </div>
-      </div>
-    </Link>
+      </div >
+    </Link >
   );
 }
