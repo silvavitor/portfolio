@@ -1,14 +1,19 @@
 "use client"
 
+import { useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import logo from "@/public/images/logo.svg";
 import menu from "@/public/images/icons/menu.svg";
 import close from "@/public/images/icons/close.svg";
-import { useState } from "react";
+
+import { useLanguageContext } from "@/contexts/LanguageContext";
 
 export default function Header() {
+  const { language, setLanguage } = useLanguageContext();
+
   const [open, setOpen] = useState(false);
 
   function handleMenuClick() {
@@ -33,16 +38,36 @@ export default function Header() {
           <nav className={` md:flex md:items-center rounded-t-md`}>
             <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 text-right font-medium drop-shadow-md">
               <li className="w-full ">
-                <Link href="/" onClick={closeMenu}>Home</Link>
+                <Link href="/" onClick={closeMenu}>
+                  <span>Home</span>
+                </Link>
               </li>
               <li className="w-full">
-                <Link href="/projects" onClick={closeMenu}>Projetos</Link>
+                <Link href="/projects" onClick={closeMenu}>
+                  <span className={language === 'pt' ? 'block' : 'hidden'}>Projetos</span>
+                  <span className={language === 'pt' ? 'hidden' : 'block'}>Projects</span>
+                </Link>
               </li>
               <li className="w-full">
-                <Link href="/resume" onClick={closeMenu}>Currículo</Link>
+                <Link href="/resume" onClick={closeMenu}>
+                  <span className={language === 'pt' ? 'block' : 'hidden'}>Currículo</span>
+                  <span className={language === 'pt' ? 'hidden' : 'block'}>Resume</span>
+                </Link>
               </li>
               <li className="w-full">
-                <Link href="/contact" onClick={closeMenu}>Contato</Link>
+                <Link href="/contact" onClick={closeMenu}>
+                  <span className={language === 'pt' ? 'block' : 'hidden'}>Contato</span>
+                  <span className={language === 'pt' ? 'hidden' : 'block'}>Contact</span>
+                </Link>
+              </li>
+              <li className="w-full">
+                <span onClick={() => setLanguage('pt')} className="cursor-pointer mr-1">
+                  PT
+                </span>
+                |
+                <span onClick={() => setLanguage('en')} className="cursor-pointer ml-1">
+                  EN
+                </span>
               </li>
             </ul>
           </nav>
