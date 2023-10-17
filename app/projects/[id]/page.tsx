@@ -6,6 +6,11 @@ import Button from "@/components/Button";
 import github from "@/public/images/icons/github.svg";
 import eye from "@/public/images/icons/eye.svg";
 
+import { ProjectData } from "@/types/project";
+
+import ProjectDescription from "@/components/ProjectDescription";
+import ProjectTechTitle from "@/components/ProjectTechTitle";
+
 type ParamsType = {
   id: string
 }
@@ -16,7 +21,7 @@ type DetailsType = {
 
 export default function ProjectDetails({ params }: DetailsType) {
   const { id } = params;
-  const project = projectsJSON.projects.find((p) => p.id === id);
+  const project: ProjectData | undefined = projectsJSON.projects.find((p) => p.id === id);
 
   if (!project) {
     return (
@@ -28,13 +33,14 @@ export default function ProjectDetails({ params }: DetailsType) {
     <div className="flex flex-col items-center justify-center  ">
       <h1 className="font-bold text-4xl">{project.title}</h1>
       <div className="flex flex-col items-center justify-center md:flex-row mt-4">
-        <Image src={`/images/${project.image}`} alt={project.title} width={600} height={300} className="rounded-md border border-black" />
+        <Image src={`/images/${project.image}`} alt={project.title} width={600} height={300} className="rounded-md border border-black" priority />
       </div>
 
-      <p className="mt-5">{project.description}</p>
+      <ProjectDescription description={project.description} />
 
       <div className="mt-5 text-sm flex flex-col items-center">
-        <p className="font-semibold text-xl">Tecnologias:</p>
+        <ProjectTechTitle />
+
         <div className="text-center">
           {project.techs?.map((tech, index) => (
             <button key={index} className="m-1 px-2 py-1 rounded-lg bg-neutral-200 cursor-default">{tech}</button>
@@ -43,17 +49,13 @@ export default function ProjectDetails({ params }: DetailsType) {
       </div>
 
       <div className="mt-5 flex space-x-2">
-        {project.repo &&
-          <a href={project.repo} target="_blank">
-            <Button icon={github}>Repo</Button>
-          </a>
-        }
+        <a href={project.repo} target="_blank" className={project.repo ? 'block' : 'hidden'}>
+          <Button icon={github}>Repo</Button>
+        </a>
 
-        {project.live &&
-          <a href={project.live} target="_blank">
-            <Button icon={eye}>Live</Button>
-          </a>
-        }
+        <a href={project.live} target="_blank" className={project.live ? 'block' : 'hidden'}>
+          <Button icon={eye}>Live</Button>
+        </a>
       </div>
     </div>
   );
