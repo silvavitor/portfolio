@@ -6,7 +6,7 @@ import vitor from "@/public/images/vitor.jpg";
 import circles from "@/public/images/circles.png";
 
 import projectsJSON from "@/data/projects.json";
-import { ProjectData } from "@/interfaces/project";
+import { ProjectData } from "@/types/project";
 import About from "@/components/About";
 import Work from "@/components/Work";
 

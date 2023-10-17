@@ -1,7 +1,7 @@
 "use client";
 
 import projectsJSON from "@/data/projects.json";
-import { ProjectData } from "@/interfaces/project";
+import { ProjectData } from "@/types/project";
 import { useMemo, useState } from "react";
 
 export default function useProjects() {

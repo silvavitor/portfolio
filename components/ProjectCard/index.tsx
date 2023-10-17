@@ -6,7 +6,7 @@ import Button from "../Button"
 import github from "@/public/images/icons/github.svg";
 import eye from "@/public/images/icons/eye.svg";
 
-import { ProjectData } from "@/interfaces/project";
+import { ProjectData } from "@/types/project";
 import { useRouter } from 'next/navigation';
 import { useLanguageContext } from "@/contexts/LanguageContext";
 
