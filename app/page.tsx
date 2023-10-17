@@ -1,7 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
 
-import Button from "@/components/Button";
 import ProjectCard from "@/components/ProjectCard";
 
 import vitor from "@/public/images/vitor.jpg";
@@ -9,7 +7,8 @@ import circles from "@/public/images/circles.png";
 
 import projectsJSON from "@/data/projects.json";
 import { ProjectData } from "@/interfaces/project";
-
+import About from "@/components/About";
+import Work from "@/components/Work";
 
 export default function Home() {
   const projects: Array<ProjectData> = projectsJSON.projects.slice(0, 3);
@@ -27,25 +26,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="md:ml-6 flex flex-col max-w-lg">
-          <h1 className="text-4xl font-bold leading-tight">Olá, me chamo Vitor e sou <span className="bg-black text-neutral-100">Desenvolvedor Full-Stack</span></h1>
-          <p className="mt-2 text-sm">Sou um desenvolvedor do Rio Grande do Sul, Brasil. Possuo 4 anos de experiência comercial, porém, tenho contato com programação há 8 anos. <br />Estou aberto a novas oportunidades e projetos.</p>
-          <div className="mt-5 flex space-x-4 justify-center md:justify-start">
-            <Link href="/contact">
-              <Button>Contato</Button>
-            </Link>
-            <Link href="/projects">
-              <Button>Projetos</Button>
-            </Link>
-          </div>
-        </div>
+        <About />
       </div>
 
-      {/* Work */}
-      <div className="mt-12 flex flex-col items-center text-center">
-        <h1 className="text-3xl font-bold">Destaques</h1>
-        <p className="mt-2 text-sm">Meus projetos destaque.<br />Se você tiver qualquer dúvida, sinta-se à vontade para me perguntar!</p>
-      </div>
+      <Work />
+
       <div className="mt-10 flex flex-col md:flex-row justify-evenly items-center">
         {projects.map((project, index) => (
           (index < 3) && <ProjectCard key={index} project={project} />
