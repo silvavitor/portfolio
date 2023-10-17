@@ -9,7 +9,7 @@ const texts = {
   },
   description1: {
     pt: 'Meus projetos destaque.',
-    en: 'My projects highlighted.'
+    en: 'My best projects.'
   },
   description2: {
     pt: 'Se você tiver qualquer dúvida, sinta-se à vontade para me perguntar!',
