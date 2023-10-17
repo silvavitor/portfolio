@@ -7,8 +7,62 @@ import send from "@/public/images/icons/send.svg";
 import arrow from "@/public/images/icons/arrow.svg";
 import useContact from "./useContact";
 import FormErrorLabel from "./formErrorLabel";
+import { useLanguageContext } from "@/contexts/LanguageContext";
+
+const texts = {
+  header: {
+    pt: 'Contato',
+    en: 'Contact',
+  },
+  p1: {
+    pt: 'Deixe-me saber se você está interessado em meus serviços ou colaboração.',
+    en: 'Let me know if you are interested in my services or collaboration.',
+  },
+  p2: {
+    pt: 'Responderei o quanto antes!',
+    en: 'I will respond as soon as possible!',
+  },
+  namePlaceholder: {
+    pt: 'Nome',
+    en: 'Name',
+  },
+  nameError: {
+    pt: 'O nome é obrigatório',
+    en: 'Name is required',
+  },
+  emailPlaceholder: {
+    pt: 'seu@email.com',
+    en: 'your@email.com',
+  },
+  emailErrorRequired: {
+    pt: 'O e-mail é obrigatório',
+    en: 'E-mail is required',
+  },
+  emailErrorPattern: {
+    pt: 'Insira um e-mail válido. Exemplo: meu@email.com',
+    en: 'Enter a valid email. Example: your@email.com',
+  },
+  messagePlaceholder: {
+    pt: 'Sua mensagem',
+    en: 'Your message',
+  },
+  messageError: {
+    pt: 'A mensagem é obrigatória',
+    en: 'Message is required',
+  },
+  send: {
+    pt: 'Enviar',
+    en: "Send",
+  },
+  talk: {
+    pt: 'Vamos conversar!',
+    en: "Let's talk!",
+  }
+}
 
 export default function Contact() {
+  const { language } = useLanguageContext();
+
   const [{
     contact,
     register,
@@ -20,10 +74,10 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col items-center max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold">Contato</h1>
+      <h1 className="text-3xl font-bold">{texts.header[language]}</h1>
       <div className="mt-3 text-sm flex flex-col md:items-center">
-        <p>Deixe-me saber se você está interessado em meus serviços ou colaboração.</p>
-        <p>Responderei o quanto antes!</p>
+        <p>{texts.p1[language]}</p>
+        <p>{texts.p2[language]}</p>
       </div>
       <form
         onSubmit={onSubmit?.()}
@@ -40,12 +94,12 @@ export default function Contact() {
             "mt-3 border rounded-md p-3 w-full"
           }
           type="text"
-          placeholder="Nome"
+          placeholder={texts.namePlaceholder[language]}
         />
 
         {
           errors?.name?.type === "required"
-          && <FormErrorLabel>O nome é obrigatório</FormErrorLabel>
+          && <FormErrorLabel>{texts.nameError[language]}</FormErrorLabel>
         }
 
         <input
@@ -61,14 +115,14 @@ export default function Contact() {
             "mt-3 border rounded-md p-3 w-full"
           }
           type="email"
-          placeholder="seu@email.com"
+          placeholder={texts.emailPlaceholder[language]}
         />
 
         {
           errors?.email?.type === "required"
-            ? <FormErrorLabel>O e-mail é obrigatório</FormErrorLabel>
+            ? <FormErrorLabel>{texts.emailErrorRequired[language]}</FormErrorLabel>
             : errors?.email?.type === "pattern" &&
-            <FormErrorLabel>Insira um e-mail válido. Exemplo: meu@email.com</FormErrorLabel>
+            <FormErrorLabel>{texts.emailErrorPattern[language]}</FormErrorLabel>
         }
 
 
@@ -82,19 +136,19 @@ export default function Contact() {
             "mt-3 border rounded-md p-3 w-full"
           }
           rows={5}
-          placeholder="Sua mensagem"
+          placeholder={texts.messagePlaceholder[language]}
         />
         {
           errors?.message?.type === "required"
-          && <FormErrorLabel>A mensagem é obrigatória</FormErrorLabel>
+          && <FormErrorLabel>{texts.messageError[language]}</FormErrorLabel>
         }
 
         <div className="mt-3">
-          <Button icon={send} submit>Enviar</Button>
+          <Button icon={send} submit>{texts.send[language]}</Button>
         </div>
       </form>
 
-      <span className="bg-black text-neutral-100 mt-10">Vamos conversar!</span>
+      <span className="bg-black text-neutral-100 mt-10">{texts.talk[language]}</span>
       <a href="mailto:vitor_fernando@outlook.com.br" className="flex items-center justify-center mt-2">
         <span className="text-sm mr-1">vitor_fernando@outlook.com.br</span>
         <Image src={arrow} alt="icon" height={18} />
