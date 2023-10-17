@@ -1,4 +1,29 @@
+'use client';
+
+import { useLanguageContext } from "@/contexts/LanguageContext";
+
+const texts = {
+  soft1: {
+    pt: 'Revisão de Código',
+    en: 'Code Review'
+  },
+  soft2: {
+    pt: 'Boa comunicação',
+    en: 'Good Communitation'
+  },
+  soft3: {
+    pt: 'Trabalho em equipe',
+    en: 'Team work'
+  },
+  soft4: {
+    pt: 'Solução de problemas',
+    en: 'Troubleshooting'
+  }
+}
+
 export default function ResumeSkillsTools() {
+  const { language } = useLanguageContext();
+
   return (
     <div className="flex flex-col md:flex-row mt-6 space-y-12 md:space-x-16 md:space-y-0">
       <div className="w-40">
@@ -24,10 +49,10 @@ export default function ResumeSkillsTools() {
         <p className="text-sm">GitLab</p>
       </div>
       <div className="w-40">
-        <p className="text-sm">Revisão de Código</p>
-        <p className="text-sm">Comunicação</p>
-        <p className="text-sm">Trabalho em equipe</p>
-        <p className="text-sm">Solução de problemas</p>
+        <p className="text-sm">{texts.soft1[language]}</p>
+        <p className="text-sm">{texts.soft2[language]}</p>
+        <p className="text-sm">{texts.soft3[language]}</p>
+        <p className="text-sm">{texts.soft4[language]}</p>
       </div>
     </div>
   );
