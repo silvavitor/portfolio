@@ -6,7 +6,6 @@ import linkedin from "@/public/images/icons/linkedin.svg";
 export default function Footer() {
   return (
     <div className="mt-16 h-24 space-x-2 flex items-center justify-center">
-      {/* ENG | PT */}
       <a href="https://github.com/silvavitor" target="_blank">
         <Image src={github} alt="GitHub" className="min-w-min" />
       </a>
