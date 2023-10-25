@@ -35,8 +35,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <span className={"px-2 py-1 rounded-lg bg-neutral-200 " + (project.techs.length > 3 ? '' : 'hidden')}>+{project.techs.length - 3}</span>
       </div>
 
-      <div className="mt-3 h-full overflow-hidden leading-4">
-        <span className="text-xs mt-3">{project.description[language]}</span>
+      <div className="mt-4 h-24">
+        <p className="leading-5 text-xs line-clamp-4">{project.description[language]}</p>
       </div>
 
       <div className="mt-5 flex justify-evenly">
