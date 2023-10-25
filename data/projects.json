@@ -4,10 +4,10 @@
       "id": "mycontacts",
       "title": "MyContacts",
       "description": {
-        "pt": "Software para organizar contatos e suas categorias.",
-        "en": "Software to organize contacts and their categories."
+        "pt": "Um projeto full-stack para organizar contatos e suas categorias. Foi desenvolvido com o mínimo de pacotes possíveis, funcionalidades como: validações de formulários, mensagens toast, modais, animações e cliente HTTP foram criadas.",
+        "en": "Full-stack project to organize contacts and their categories. It was developed with as few packages as possible, features such as: form validations, toast messages, modals, animations and an HTTP client were created."
       },
-      "image": "mycontacts.png",
+      "image": "mycontacts.webp",
       "techs": [
         "React",
         "Node",
@@ -22,10 +22,10 @@
       "id": "portfolio",
       "title": "Portfolio",
       "description": {
-        "pt": "Portfolio moderno e minimalista.",
-        "en": "Modern and minimalist portfolio."
+        "pt": "Portfolio moderno e minimalista. Foi desenvolvido com Typescript, Next.js 13 utilizando o App Router, Resend para o envio de e-mails e Tailwind(Mobile first) para estilizações.",
+        "en": "Modern and minimalist portfolio. It was developed with Typescript, Next.js 13 using the App Router, Resend to send e-mails and Tailwind(Mobile first) for styling."
       },
-      "image": "portfolio.png",
+      "image": "portfolio.webp",
       "techs": [
         "Next.js",
         "Tailwind.css",
@@ -38,10 +38,10 @@
       "id": "facerecognition",
       "title": "FaceRecognition",
       "description": {
-        "pt": "Meu primeiro projeto com react, um software que detecta faces numa image utilizando IA.",
+        "pt": "Meu primeiro projeto com React, um software que detecta faces numa imagem utilizando IA.",
         "en": "My first project with react, a software that detects faces in an image using AI."
       },
-      "image": "facedetection.png",
+      "image": "facedetection.webp",
       "techs": [
         "React",
         "Node",
