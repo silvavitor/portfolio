@@ -1,12 +1,13 @@
 'use client';
 
-import React, { createContext, useContext, useState } from "react";
+import useLocalStorage from "@/utils/hooks/useLocalStorage";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 type LanguageContextProvider = {
   children: React.ReactNode
 }
 
-type Language = 'pt' | 'en';
+export type Language = 'pt' | 'en';
 
 type LanguageContext = {
   language: Language;

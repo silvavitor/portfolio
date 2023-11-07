@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -9,12 +9,18 @@ import logo from "@/public/images/logo.svg";
 import menu from "@/public/images/icons/menu.svg";
 import close from "@/public/images/icons/close.svg";
 
-import { useLanguageContext } from "@/contexts/LanguageContext";
+import { Language, useLanguageContext } from "@/contexts/LanguageContext";
+import useLocalStorage from "@/utils/hooks/useLocalStorage";
 
 export default function Header() {
+  const { value, setValue } = useLocalStorage<Language>('lang', 'pt');
   const { language, setLanguage } = useLanguageContext();
 
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setLanguage(value);
+  }, [value, setLanguage]);
 
   function handleMenuClick() {
     setOpen((prevOpen) => !prevOpen);
@@ -22,6 +28,11 @@ export default function Header() {
 
   function closeMenu() {
     setOpen(false);
+  }
+
+  function ChangeLanguage(language: Language) {
+    setValue(language);
+    setLanguage(language);
   }
 
   return (
@@ -61,11 +72,11 @@ export default function Header() {
                 </Link>
               </li>
               <li className="w-full">
-                <span onClick={() => setLanguage('pt')} className={`cursor-pointer mr-1 p-1 ${language === 'pt' ? 'bg-neutral-300 rounded' : ''}`}>
+                <span onClick={() => ChangeLanguage('pt')} className={`cursor-pointer mr-1 p-1 ${language === 'pt' ? 'bg-neutral-300 rounded' : ''}`}>
                   PT
                 </span>
                 |
-                <span onClick={() => setLanguage('en')} className={`cursor-pointer ml-1 p-1 ${language === 'en' ? 'bg-neutral-300 rounded' : ''}`}>
+                <span onClick={() => ChangeLanguage('en')} className={`cursor-pointer ml-1 p-1 ${language === 'en' ? 'bg-neutral-300 rounded' : ''}`}>
                   EN
                 </span>
               </li>
