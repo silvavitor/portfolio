@@ -7,7 +7,7 @@ export type ProjectData = {
   id: string,
   title: string,
   description: ProjectDataDescription,
-  image: string,
+  images: string[],
   techs: Array<string>,
   repo: string,
   live: string,

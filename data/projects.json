@@ -7,7 +7,10 @@
         "pt": "Um projeto full-stack para organizar contatos e suas categorias. Foi desenvolvido com o mínimo de pacotes possíveis, funcionalidades como: validações de formulários, mensagens toast, modais, animações e cliente HTTP foram criadas.",
         "en": "Full-stack project to organize contacts and their categories. It was developed with as few packages as possible, features such as: form validations, toast messages, modals, animations and an HTTP client were created."
       },
-      "image": "mycontacts.webp",
+      "images": [
+        "mycontacts.webp",
+        "mycontacts2.webp"
+      ],
       "techs": [
         "React",
         "Node",
@@ -25,7 +28,10 @@
         "pt": "Portfolio moderno e minimalista. Foi desenvolvido com Typescript, Next.js 13 utilizando o App Router, Resend para o envio de e-mails e Tailwind(Mobile first) para estilizações.",
         "en": "Modern and minimalist portfolio. It was developed with Typescript, Next.js 13 using the App Router, Resend to send e-mails and Tailwind(Mobile first) for styling."
       },
-      "image": "portfolio.webp",
+      "images": [
+        "portfolio.webp",
+        "portfolio2.webp"
+      ],
       "techs": [
         "Next.js",
         "Tailwind.css",
@@ -41,7 +47,9 @@
         "pt": "Meu primeiro projeto com React, um software que detecta faces numa imagem utilizando IA.",
         "en": "My first project with react, a software that detects faces in an image using AI."
       },
-      "image": "facedetection.webp",
+      "images": [
+        "facedetection.webp"
+      ],
       "techs": [
         "React",
         "Node",
