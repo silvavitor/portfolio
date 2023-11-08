@@ -9,7 +9,10 @@
       },
       "images": [
         "mycontacts.webp",
-        "mycontacts2.webp"
+        "mycontacts2.webp",
+        "mycontacts3.webp",
+        "mycontacts4.webp",
+        "mycontactsmobile.webp"
       ],
       "techs": [
         "React",
