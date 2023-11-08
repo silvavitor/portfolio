@@ -34,7 +34,7 @@ export default function ProjectDetails({ params }: DetailsType) {
     <div className="flex flex-col items-center justify-center  ">
       <h1 className="font-bold text-4xl">{project.title}</h1>
       <div className="flex flex-col items-center justify-center md:flex-row mt-4">
-        <EmblaCarousel options={{ loop: true }} images={project.images} />
+        <EmblaCarousel options={{ loop: true }} images={project.images} altText={project.title} />
       </div>
 
       <ProjectDescription description={project.description} />

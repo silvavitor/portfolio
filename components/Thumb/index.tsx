@@ -3,10 +3,11 @@ import Image from "next/image";
 type ThumbProps = {
   selected: boolean
   imgSrc: string
+  altText: string
   onClick: () => void
 };
 
-export default function Thumb({ selected, imgSrc, onClick }: ThumbProps) {
+export default function Thumb({ selected, imgSrc, altText, onClick }: ThumbProps) {
   return (
     <div
       className={`flex-0-33 min-w-0 pl-3 relative ${selected ? 'opacity-100' : 'opacity-60'}`}
@@ -32,7 +33,7 @@ export default function Thumb({ selected, imgSrc, onClick }: ThumbProps) {
           height={175}
           width={175}
           src={`/images/${imgSrc}`}
-          alt="Your alt text" />
+          alt={altText} />
       </button>
     </div>
   );

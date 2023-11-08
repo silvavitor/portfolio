@@ -10,10 +10,11 @@ import Thumb from '../Thumb';
 
 type EmblaCarouselProps = {
   options?: EmblaOptionsType;
+  altText: string;
   images: string[];
 }
 
-export default function EmblaCarousel({ options, images }: EmblaCarouselProps) {
+export default function EmblaCarousel({ options, images, altText }: EmblaCarouselProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel(options);
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
@@ -59,7 +60,7 @@ export default function EmblaCarousel({ options, images }: EmblaCarouselProps) {
                 src={`/images/${image}`}
                 width={1280}
                 height={720}
-                alt="Your alt text" />
+                alt={altText} />
             </div>
           ))}
         </div>
@@ -73,6 +74,7 @@ export default function EmblaCarousel({ options, images }: EmblaCarouselProps) {
                 onClick={() => onThumbClick(index)}
                 selected={index === selectedIndex}
                 imgSrc={image}
+                altText={altText}
                 key={index} />
             ))}
           </div>
