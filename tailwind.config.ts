@@ -1,4 +1,6 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
+
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   content: [
@@ -17,6 +19,22 @@ const config: Config = {
   },
   plugins: [
     require('@tailwindcss/line-clamp'),
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.backface-visible': {
+          'backface-visibility': 'visible',
+        },
+        '.backface-hidden': {
+          'backface-visibility': 'hidden',
+        },
+        '.flex-0-100': {
+          'flex': '0 0 100%',
+        },
+        '.flex-0-33': {
+          'flex': '0 0 33%',
+        }
+      })
+    }),
   ],
 }
 export default config
