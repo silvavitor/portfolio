@@ -10,6 +10,7 @@ import { ProjectData } from "@/types/project";
 
 import ProjectDescription from "@/components/ProjectDescription";
 import ProjectTechTitle from "@/components/ProjectTechTitle";
+import EmblaCarousel from "@/components/ProjectImageCarousel";
 
 type ParamsType = {
   id: string
@@ -33,7 +34,7 @@ export default function ProjectDetails({ params }: DetailsType) {
     <div className="flex flex-col items-center justify-center  ">
       <h1 className="font-bold text-4xl">{project.title}</h1>
       <div className="flex flex-col items-center justify-center md:flex-row mt-4">
-        <Image src={`/images/${project.image}`} alt={project.title} width={600} height={300} className="rounded-md border border-black" priority />
+        <EmblaCarousel options={{ loop: true }} images={project.images} />
       </div>
 
       <ProjectDescription description={project.description} />
