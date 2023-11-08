@@ -56,7 +56,7 @@ export default function EmblaCarousel({ options, images, altText }: EmblaCarouse
           {images.map((image, index) => (
             <div className="pl-4 min-w-0 relative flex-0-100" key={index}>
               <Image
-                className="block h-full w-full object-cover rounded-md border border-black" priority
+                className="block h-full w-full object-cover rounded-md border border-neutral-300" priority
                 src={`/images/${image}`}
                 width={1280}
                 height={720}
