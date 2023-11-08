@@ -29,7 +29,7 @@ export default function Thumb({ selected, imgSrc, altText, onClick }: ThumbProps
         type="button"
       >
         <Image
-          className="block w-100 object-cover"
+          className="block w-100 object-cover rounded-md"
           height={175}
           width={175}
           src={`/images/${imgSrc}`}
