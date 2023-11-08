@@ -67,7 +67,7 @@ export default function EmblaCarousel({ options, images, altText }: EmblaCarouse
       </div>
 
       <div className="mt-3 px-2 pb-2 pt-3 bg-neutral-200 rounded-lg">
-        <div className="overflow-hidden" ref={emblaThumbsRef}>
+        <div className="overflow-hidden h-[104px]" ref={emblaThumbsRef}>
           <div className="flex flex-row ml-[-.075rem]">
             {images.map((image, index) => (
               <Thumb
