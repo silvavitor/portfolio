@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-neutral-100 mx-auto max-w-6xl px-12`}>
+      <body className={`${inter.className} bg-neutral-100 mx-auto max-w-6xl px-6`}>
         <LanguageContextProvider>
           <Header />
           <Toaster
