@@ -18,7 +18,7 @@ export default function ProjectImageCarousel({ images, alt }: ProjectImageCarous
     <div className="max-w-full mt-4">
       <Carousel
         infiniteLoop
-        // autoPlay
+        autoPlay
         emulateTouch
         showStatus={false}
         centerMode={false}
