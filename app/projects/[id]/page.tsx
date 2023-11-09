@@ -1,6 +1,5 @@
 import projectsJSON from "@/data/projects.json";
 import NotFound from "./NotFound";
-import Image from "next/image";
 import Button from "@/components/Button";
 
 import github from "@/public/images/icons/github.svg";
@@ -10,7 +9,7 @@ import { ProjectData } from "@/types/project";
 
 import ProjectDescription from "@/components/ProjectDescription";
 import ProjectTechTitle from "@/components/ProjectTechTitle";
-import EmblaCarousel from "@/components/ProjectImageCarousel";
+import ProjectImageCarousel from "@/components/ProjectImageCarousel";
 
 type ParamsType = {
   id: string
@@ -33,9 +32,7 @@ export default function ProjectDetails({ params }: DetailsType) {
   return (
     <div className="flex flex-col items-center justify-center  ">
       <h1 className="font-bold text-4xl">{project.title}</h1>
-      <div className="flex flex-col items-center justify-center md:flex-row mt-4">
-        <EmblaCarousel options={{ loop: true }} images={project.images} altText={project.title} />
-      </div>
+      <ProjectImageCarousel alt={project.title} images={project.images} />
 
       <ProjectDescription description={project.description} />
 

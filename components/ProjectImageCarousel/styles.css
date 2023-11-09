@@ -1,0 +1,38 @@
+.thumb {
+  transition: border .15s ease-in;
+  display: inline-block;
+  margin-right: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 3px solid #e5e5e5;
+  border-radius: 0.375rem;
+  padding: 2px;
+
+}
+
+.carousel .thumb.selected,
+.carousel .thumb:hover {
+  border: 3px solid #d4d4d4;
+  border-radius: 0.375rem;
+}
+
+.control-arrow {
+  background: #a3a3a3 !important;
+}
+
+.control-next {
+  border-radius: 0 0.375rem 0.375rem 0;
+}
+
+.control-prev {
+  border-radius: 0.375rem 0 0 0.375rem;
+}
+
+.dot {
+  border-radius: 1px !important;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+}

@@ -1,85 +1,54 @@
-"use client"
+"use client";
 
-import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react'
+import Image from "next/image";
 
-import Image from 'next/image';
-import { useCallback, useEffect, useState } from 'react';
-import Thumb from '../Thumb';
+import { Carousel } from "react-responsive-carousel";
 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
+import "./styles.css";
 
-type EmblaCarouselProps = {
-  options?: EmblaOptionsType;
-  altText: string;
-  images: string[];
+type ProjectImageCarouselProps = {
+  images: string[]
+  alt: string
 }
 
-export default function EmblaCarousel({ options, images, altText }: EmblaCarouselProps) {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [emblaMainRef, emblaMainApi] = useEmblaCarousel(options);
-  const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
-    containScroll: 'keepSnaps',
-    dragFree: true
-  });
-
-  const onThumbClick = useCallback(
-    (index: number) => {
-      if (!emblaMainApi || !emblaThumbsApi) {
-        return;
-      }
-      emblaMainApi.scrollTo(index);
-    },
-    [emblaMainApi, emblaThumbsApi]
-  );
-
-  const onSelect = useCallback(() => {
-    if (!emblaMainApi || !emblaThumbsApi) {
-      return;
-    }
-    setSelectedIndex(emblaMainApi.selectedScrollSnap());
-    emblaThumbsApi.scrollTo(emblaMainApi.selectedScrollSnap());
-  }, [emblaMainApi, emblaThumbsApi, setSelectedIndex]);
-
-  useEffect(() => {
-    if (!emblaMainApi) {
-      return;
-    }
-    onSelect();
-    emblaMainApi.on('select', onSelect);
-    emblaMainApi.on('reInit', onSelect);
-  }, [emblaMainApi, onSelect]);
-
+export default function ProjectImageCarousel({ images, alt }: ProjectImageCarouselProps) {
   return (
-    <div className="py-7">
-      <div className="overflow-hidden" ref={emblaMainRef}>
-        <div className="backface-hidden flex touch-pan-y ml-[-1rem]">
-          {images.map((image, index) => (
-            <div className="pl-4 min-w-0 relative flex-0-100" key={index}>
+    <div className="max-w-full mt-4">
+      <Carousel
+        infiniteLoop
+        // autoPlay
+        emulateTouch
+        showStatus={false}
+        centerMode={false}
+        renderThumbs={() => (
+          images.map((thumb, index) => (
+            <div key={index} >
               <Image
-                className="block h-full w-full object-cover rounded-md border border-neutral-300" priority
-                src={`/images/${image}`}
-                width={1280}
-                height={720}
-                alt={altText} />
-            </div>
-          ))}
-        </div>
-      </div>
+                className="rounded-sm"
+                src={`/images/${thumb}`}
+                alt={alt}
 
-      <div className="mt-3 px-2 pb-2 pt-3 bg-neutral-200 rounded-lg">
-        <div className="overflow-hidden h-[104px]" ref={emblaThumbsRef}>
-          <div className="flex flex-row ml-[-.075rem]">
-            {images.map((image, index) => (
-              <Thumb
-                onClick={() => onThumbClick(index)}
-                selected={index === selectedIndex}
-                imgSrc={image}
-                altText={altText}
-                key={index} />
-            ))}
-          </div>
-        </div>
-      </div>
+                width={400}
+                height={225}
+              />
+            </div>
+          ))
+        )}
+      >
+        {
+          images.map((image, index) => (
+            <Image
+              className="rounded-md px-2"
+              key={index}
+              alt={alt}
+              src={`/images/${image}`}
+              width={1280}
+              height={720} />
+          ))
+        }
+      </Carousel >
     </div>
   );
 }
