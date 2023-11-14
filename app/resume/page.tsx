@@ -64,7 +64,7 @@ const texts = {
     en: 'Download my resume as PDF.'
   },
   downloadButton: {
-    pt: 'Baixar (96KB)',
+    pt: 'Baixar (729KB)',
     en: 'Download (96KB)'
   },
 }
@@ -119,7 +119,7 @@ export default function Resume() {
 
       <span className="mt-10">{texts.downloadText[language]}</span>
       <div className="mt-3">
-        <a href="pdf/resume_vitor.pdf" target="_blank" rel="noopener noreferrer" download>
+        <a href={language === "pt" ? "pdf/curriculo_vitor.pdf" : "pdf/resume_vitor.pdf"} target="_blank" rel="noopener noreferrer" download>
           <Button icon={download}>{texts.downloadButton[language]}</Button>
         </a>
       </div>
