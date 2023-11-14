@@ -64,8 +64,8 @@ const texts = {
     en: 'Download my resume as PDF.'
   },
   downloadButton: {
-    pt: 'Baixar (729KB)',
-    en: 'Download (96KB)'
+    pt: 'Baixar (675KB)',
+    en: 'Download (551KB)'
   },
 }
 
