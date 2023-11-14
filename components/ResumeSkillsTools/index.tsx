@@ -41,6 +41,7 @@ export default function ResumeSkillsTools() {
         <p className="text-sm">React.js</p>
         <p className="text-sm">Next.js</p>
         <p className="text-sm">Node.js</p>
+        <p className="text-sm">Typescript</p>
         <p className="text-sm">Tailwind.css</p>
         <p className="text-sm">Laravel</p>
         <p className="text-sm">MySQL</p>
