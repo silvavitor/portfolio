@@ -56,6 +56,7 @@
         "Node",
         "NestJS",
         "Prisma",
+        "TypeScript",
         "PostgreSQL"
       ],
       "repo": "https://github.com/silvavitor/my-contacts-api-nest",
