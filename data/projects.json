@@ -43,6 +43,25 @@
       "live": "https://vitorfernandoportfolio.vercel.app/"
     },
     {
+      "id": "mycontactsapinest",
+      "title": "MyContacts NestJS API",
+      "description": {
+        "pt": "Reescrita do código de backend do MyContacts utilizando NestJS, Prisma com driver de PostgreSQL e princípios SOLID como utilizar a inversão de dependêcias e depender de um contrato(interface) não de uma classe real",
+        "en": "Rewritten MyContacts backend code using NestJS, Prisma with PostgreSQL driver and SOLID principles such as using dependency inversion and depends on a contract(interface) not an actual class"
+      },
+      "images": [
+        "mycontacts_nest.webp"
+      ],
+      "techs": [
+        "Node",
+        "NestJS",
+        "Prisma",
+        "PostgreSQL"
+      ],
+      "repo": "https://github.com/silvavitor/my-contacts-api-nest",
+      "live": ""
+    },
+    {
       "id": "facerecognition",
       "title": "FaceRecognition",
       "description": {
