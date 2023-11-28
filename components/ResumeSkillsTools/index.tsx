@@ -25,7 +25,7 @@ export default function ResumeSkillsTools() {
   const { language } = useLanguageContext();
 
   return (
-    <div className="flex flex-col md:flex-row mt-6 space-y-12 md:space-x-16 md:space-y-0">
+    <div className="flex flex-col md:flex-row mt-6 space-y-12 md:space-x-16 md:space-y-0 text-center md:text-left">
       <div className="w-40">
         <p className="text-sm">JavaScript</p>
         <p className="text-sm">HTML</p>
