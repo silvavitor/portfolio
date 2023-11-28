@@ -7,9 +7,9 @@ interface ResumeInfoProps {
 export default function ResumeInfo({ title, local, date }: ResumeInfoProps) {
   return (
     <>
-      <span className="font-bold mt-6">{title}</span>
-      <span className="text-sm">{local}</span>
-      <span className="text-sm text-neutral-400">{date}</span>
+      <span className="text-center font-bold mt-6">{title}</span>
+      <span className="text-center text-sm">{local}</span>
+      <span className="text-center text-sm text-neutral-400">{date}</span>
     </>
   );
 }
