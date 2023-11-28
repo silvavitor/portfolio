@@ -28,7 +28,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       ref={ref}
       onClick={() => push(`/projects/${project.id}`)}
       className={`mt-8 md:mt-0 mx-1 w-64 h-96 py-5 px-3 cursor-pointer bg-white flex flex-col rounded-md shadow-md hover:shadow-xl transition duration-200
-        ${isInView ? 'animate-bottomUpFadeIn' : 'translate-y-[30px]'}
+        ${isInView ? 'animate-bottomUpFadeIn' : 'translate-y-5'}
       `}
     >
       <Image src={`/images/${project.images[0]}`} alt={project.title} width={300} height={300} className="rounded-md h-32" />
