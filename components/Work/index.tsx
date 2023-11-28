@@ -21,7 +21,7 @@ export default function Work() {
   const { language } = useLanguageContext();
 
   return (
-    <div className="mt-12 flex flex-col items-center text-center">
+    <div className="mt-12 flex flex-col items-center text-center animate-upBottomFadeIn">
       <h1 className="text-3xl font-bold">{texts.heading[language]}</h1>
       <p className="mt-2 text-sm">{texts.description1[language]}<br />{texts.description2[language]}</p>
     </div>

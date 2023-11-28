@@ -73,7 +73,7 @@ export default function Contact() {
   }] = useContact();
 
   return (
-    <div className="flex flex-col items-center max-w-3xl mx-auto">
+    <div className="flex flex-col items-center max-w-3xl mx-auto animate-bottomUpFadeIn">
       <h1 className="text-3xl font-bold">{texts.header[language]}</h1>
       <div className="mt-3 text-sm flex flex-col md:items-center">
         <p>{texts.p1[language]}</p>

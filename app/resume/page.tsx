@@ -73,7 +73,7 @@ export default function Resume() {
   const { language } = useLanguageContext();
 
   return (
-    <div className="flex flex-col items-center max-w-3xl mx-auto">
+    <div className="flex flex-col items-center max-w-3xl mx-auto animate-bottomUpFadeIn">
       <div className="relative top-0 left-0">
         <div className="absolute z-0">
           <Image src={circles} alt="circles" className="rounded-lg opacity-5 scale-150 rotate-90" />

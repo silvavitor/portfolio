@@ -39,9 +39,9 @@ export default function About() {
 
   return (
     <div className="md:ml-6 flex flex-col max-w-lg">
-      <h1 className="text-4xl font-bold leading-tight">{texts.heading[language]}<span className="bg-black text-neutral-100">{texts.role[language]}</span></h1>
-      <p className="mt-2 text-sm">{texts.description1[language]}<br />{texts.description2[language]}</p>
-      <div className="mt-5 flex space-x-4 justify-center md:justify-start">
+      <h1 className="text-4xl font-bold leading-tight animate-upBottomFadeIn">{texts.heading[language]}<span className="bg-black text-neutral-100">{texts.role[language]}</span></h1>
+      <p className="mt-2 text-sm animate-leftRightFadeIn">{texts.description1[language]}<br />{texts.description2[language]}</p>
+      <div className="mt-5 flex space-x-4 justify-center md:justify-start animate-bottomUpFadeIn">
         <Link href="/contact">
           <Button>{texts.button.contact[language]}</Button>
         </Link>

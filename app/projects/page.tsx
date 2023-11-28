@@ -31,8 +31,8 @@ export default function Projects() {
 
   return (
     <div className="flex flex-col items-center mx-auto">
-      <h1 className="text-3xl font-bold">{texts.title[language]}</h1>
-      <div className="mt-3 text-sm flex flex-col items-center">
+      <h1 className="text-3xl font-bold animate-bottomUpFadeIn">{texts.title[language]}</h1>
+      <div className="mt-3 text-sm flex flex-col items-center animate-bottomUpFadeIn">
         <div className="space-x-2 space-y-2 text-center">
           <button key={'all'} className={`m-1 px-2 py-1 rounded-lg  cursor-pointer ${selectedTech === 'all' ? 'bg-neutral-300' : 'bg-neutral-200'}`} onClick={filterTechs} id={'all'}>{texts.all[language]}</button>
           {techs?.map((tech, index) => (

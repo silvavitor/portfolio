@@ -20,7 +20,7 @@ export default function Home() {
           <div className="hidden lg:block absolute bottom-[357px] left-[-79px] ">
             <Image src={circles} height={125} alt="circles" className="rounded-lg" />
           </div>
-          <Image src={vitor} alt="Vitor Fernando da Silva" className="max-h-96 h-fit w-fit rounded-md" />
+          <Image src={vitor} alt="Vitor Fernando da Silva" className="max-h-96 h-fit w-fit rounded-md animate-leftRightFadeIn" />
           <div className="hidden lg:block absolute top-[357px] right-[-79px]">
             <Image src={circles} height={125} alt="circles" className="rounded-lg" />
           </div>
