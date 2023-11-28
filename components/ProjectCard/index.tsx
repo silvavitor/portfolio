@@ -9,6 +9,8 @@ import eye from "@/public/images/icons/eye.svg";
 import { ProjectData } from "@/types/project";
 import { useRouter } from 'next/navigation';
 import { useLanguageContext } from "@/contexts/LanguageContext";
+import { useRef } from "react";
+import { useInView } from "framer-motion"
 
 type ProjectCardProps = {
   project: ProjectData
@@ -18,11 +20,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const { language } = useLanguageContext();
   const techs = project.techs.slice(0, 3);
   const { push } = useRouter();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <div
+      ref={ref}
       onClick={() => push(`/projects/${project.id}`)}
-      className="mt-8 md:mt-0 mx-1 w-64 h-96 py-5 px-3 cursor-pointer bg-white flex flex-col rounded-md shadow-md hover:shadow-xl transition duration-200"
+      className={`mt-8 md:mt-0 mx-1 w-64 h-96 py-5 px-3 cursor-pointer bg-white flex flex-col rounded-md shadow-md hover:shadow-xl transition duration-200
+        ${isInView ? 'animate-bottomUpFadeIn' : ''}
+      `}
     >
       <Image src={`/images/${project.images[0]}`} alt={project.title} width={300} height={300} className="rounded-md h-32" />
 
