@@ -24,16 +24,16 @@ const texts = {
     en: 'Work Experience'
   },
   info1Title: {
-    pt: 'Desenvolvedor de Software',
-    en: 'Software Developer'
+    pt: 'Desenvolvedor de Backend',
+    en: 'Backend Developer'
   },
   info1Date: {
     pt: 'Jun 2021 - Jun 2023',
     en: 'Jun 2021 - Jun 2023'
   },
   info2Title: {
-    pt: 'Desenvolvedor Full Stack',
-    en: 'Full Stack Developer'
+    pt: 'Desenvolvedor Full Stack - Foco em Backend',
+    en: 'Full Stack Developer - Backend Focused'
   },
   info2Date: {
     pt: 'Jan 2020 - Mai 2021',
@@ -42,6 +42,14 @@ const texts = {
   info3Date: {
     pt: 'Fev 2019 - Dez 2019',
     en: 'Feb 2019 - Dec 2019'
+  },
+  info4Title: {
+    pt: 'Desenvolvedor Full Stack - Foco em Backend',
+    en: 'Full Stack Developer - Backend Focused'
+  },
+  info4Date: {
+    pt: 'Jan 2024 - Presente',
+    en: 'Jan 2024 - Present'
   },
   school: {
     pt: 'Educação',
@@ -84,6 +92,11 @@ export default function Resume() {
 
       <h2 className="mt-10 text-xl bg-black text-neutral-100">{texts.experience[language]}</h2>
 
+      <ResumeInfo
+        title={texts.info4Title[language]}
+        local="teceo"
+        date={texts.info4Date[language]}
+      />
       <ResumeInfo
         title={texts.info1Title[language]}
         local="Nelogica"
