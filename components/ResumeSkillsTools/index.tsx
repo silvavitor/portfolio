@@ -28,19 +28,22 @@ export default function ResumeSkillsTools() {
     <div className="flex flex-col md:flex-row mt-6 space-y-12 md:space-x-16 md:space-y-0 text-center md:text-left">
       <div className="w-40">
         <p className="text-sm">JavaScript</p>
+        <p className="text-sm">Python</p>
         <p className="text-sm">HTML</p>
         <p className="text-sm">CSS</p>
         <p className="text-sm">PHP</p>
         <p className="text-sm">SQL</p>
         <p className="text-sm">Git</p>
-        <p className="text-sm">Python</p>
         <p className="text-sm">OOP</p>
         <p className="text-sm">REST APIs</p>
       </div>
       <div className="w-40">
+        <p className="text-sm">Node.js</p>
+        <p className="text-sm">NestJS</p>
+        <p className="text-sm">RabbitMQ</p>
+        <p className="text-sm">TypeORM</p>
         <p className="text-sm">React.js</p>
         <p className="text-sm">Next.js</p>
-        <p className="text-sm">Node.js</p>
         <p className="text-sm">Typescript</p>
         <p className="text-sm">Tailwind.css</p>
         <p className="text-sm">Laravel</p>
