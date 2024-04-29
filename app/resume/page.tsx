@@ -24,7 +24,7 @@ const texts = {
     en: 'Work Experience'
   },
   info1Title: {
-    pt: 'Desenvolvedor de Backend',
+    pt: 'Desenvolvedor Backend',
     en: 'Backend Developer'
   },
   info1Date: {
